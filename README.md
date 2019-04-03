@@ -1,4 +1,4 @@
-# Iteration-of-Personal-Development-Technology
+# Iteration-of-Personal-Technology
 Technology accumulation
 
 1. Java 

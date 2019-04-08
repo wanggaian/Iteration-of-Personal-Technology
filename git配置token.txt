@@ -1,26 +1,26 @@
-1.git¹ÙÍø¿Í»§¶ËÏÂÔØ https://git-scm.com/
-2.´ò¿ªgit-bash 
+1.gitå®˜ç½‘å®¢æˆ·ç«¯ä¸‹è½½ https://git-scm.com/
+2.æ‰“å¼€git-bash 
 3.$ ssh-keygen -t rsa -C "wanggaian@163.com"
 4.Generating public/private rsa key pair.
 Enter file in which to save the key (/c/Users/wanggaian/.ssh/id_rsa): /c/Users/wanggaian/.ssh/id_rsa_github
 5.cd ~/.ssh/
 6.touch config
 7.vi config
-8.i¼Ó»Ø³µ
-9.±à¼­(Ò»¸ökey¶ÔÓ¦Ò»¸öhost)
+8.iåŠ å›žè½¦
+9.ç¼–è¾‘(ä¸€ä¸ªkeyå¯¹åº”ä¸€ä¸ªhost)
 #host1
  host github.com
  hostName github.com
- user wanggaian
+ user git
  IdentityFile /c/Users/wanggaian/.ssh/id_rsa_github
 10.esc
-11.:wq ¼Ó»Ø³µ±£´æ
+11.:wq åŠ å›žè½¦ä¿å­˜
 12.vi id_rsa_github.pub
-13.¸´ÖÆ¹«Ô¿token
-14.GitHub->ÓÒÉÏ½Ç¸öÈËÖÐÐÄ->settings->SSH and GPG keys ->new ssh-keys->Õ³Ìù±£´æ
-15.±¾µØssh -T git@github.com
-16.Èç¹û²»ÊÇµÚÒ»´Î°²×°ÔòÐèÒªÌí¼Ó
+13.å¤åˆ¶å…¬é’¥token
+14.GitHub->å³ä¸Šè§’ä¸ªäººä¸­å¿ƒ->settings->SSH and GPG keys ->new ssh-keys->ç²˜è´´ä¿å­˜
+15.æœ¬åœ°ssh -T git@github.com
+16.å¦‚æžœä¸æ˜¯ç¬¬ä¸€æ¬¡å®‰è£…åˆ™éœ€è¦æ·»åŠ 
 17.ssh-add id_rsa_github
-18.ÈôÊÇÃ»ÓÐÈ¨ÏÞ ÏÈssh-agent bash ÔÙÖØ¸´17
+18.è‹¥æ˜¯æ²¡æœ‰æƒé™ å…ˆssh-agent bash å†é‡å¤17
 19.git clone git@github:wanggaian:/...
 20.cp sourcedir targetdir  -> git status -> git commit -m "first commit" -> git push origin master

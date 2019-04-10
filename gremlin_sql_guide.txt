@@ -1,0 +1,2 @@
+Í¬ÐÐ
+g.V().has("el_p_idcard", "ep_idcard_id", "111222198012126666").as("v1").bothE("rl_po_transport").as("e1").has("rp_tansport_time", lte("1234567")).has("rp_tansport_time", gte("123456")).otherV().hasLabel("el_o_ticket").simplePath().as("v2").bothE("rl_po_transport").as("e2").has("rp_tansport_time", lte("1234567")).has("rp_tansport_time", gte("123456")).where("e1", eq("e2")).by("rp_tansport_time").by("rp_tansport_time").otherV().hasLabel("el_p_idcard").simplePath().as("v3").path().limit(50)

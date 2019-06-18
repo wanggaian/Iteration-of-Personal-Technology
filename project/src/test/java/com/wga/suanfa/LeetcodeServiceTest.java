@@ -47,4 +47,22 @@ public class LeetcodeServiceTest {
         int length = leetcodeService.lengthOfLongestSubstring(s);
         System.out.println(length);
     }
+
+    /**
+     * Leetcode4
+     */
+    @Test
+    public void findMedianSortedArraysTest() {
+
+    }
+
+    /**
+     * Leetcode5
+     */
+    @Test
+    public void longestPalindromeTest() {
+        String s = "bacab";
+        String res = leetcodeService.longestPalindrome(s);
+        System.out.println(res);
+    }
 }

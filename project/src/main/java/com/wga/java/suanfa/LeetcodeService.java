@@ -91,6 +91,9 @@ public class LeetcodeService {
         return s.substring(lo, lo + maxLen);
     }
 
+    /**
+     * 判断是不是回文 j==k "bab"类型  k=j+1 "baab"类型的
+     */
     private void extendPalindrome(String s, int j, int k) {
         while (j >= 0 && k < s.length() && s.charAt(j) == s.charAt(k)) {
             j--;
@@ -100,5 +103,54 @@ public class LeetcodeService {
             lo = j + 1;
             maxLen = k - j - 1;
         }
+    }
+
+    /**
+     * Leetcode6
+     * The string "PAYPALISHIRING"
+     * is written in a zigzag pattern on a given number of rows like this:
+     * (you may want to display this pattern in a fixed font for better legibility)
+     * 字符串“PAYPALISHIRING”在给定行数上以之字形书写，如下所示:
+     * (您可能想要以固定字体显示此模式，以提高可读性)
+     */
+    public String convert(String s, int nRows) {
+        char[] c = s.toCharArray();
+        int len = c.length;
+        StringBuffer[] sb = new StringBuffer[nRows];
+        for (int i = 0; i < sb.length; i++) sb[i] = new StringBuffer();
+
+        int i = 0;
+        while (i < len) {
+            for (int idx = 0; idx < nRows && i < len; idx++) // vertically down
+                sb[idx].append(c[i++]);
+            for (int idx = nRows-2; idx >= 1 && i < len; idx--) // obliquely up
+                sb[idx].append(c[i++]);
+        }
+        for (int idx = 1; idx < sb.length; idx++)
+            sb[0].append(sb[idx]);
+        return sb[0].toString();
+    }
+
+    /**
+     * Leetcode7
+     * Given a 32-bit signed integer, reverse digits of an integer.
+     *
+     * Example 1:
+     *
+     * Input: 123
+     * Output: 321
+     * Example 2:
+     *
+     * Input: -123
+     * Output: -321
+     * Example 3:
+     *
+     * Input: 120
+     * Output: 21
+     */
+    public int reverse(int x) {
+
+        // TODO: 2019/6/19  
+        return 0;
     }
 }

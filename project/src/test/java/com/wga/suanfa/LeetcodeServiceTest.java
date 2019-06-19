@@ -65,4 +65,24 @@ public class LeetcodeServiceTest {
         String res = leetcodeService.longestPalindrome(s);
         System.out.println(res);
     }
+
+    /**
+     * leetcode6
+     */
+    @Test
+    public void convert() {
+        String s = "PAYPALISHIRING";
+        String res = leetcodeService.convert(s, 4);
+        System.out.println(res);
+    }
+
+    /**
+     * leetcode7
+     */
+    @Test
+    public void reverse() {
+        int num = -320;
+        int res = leetcodeService.reverse(num);
+        System.out.println(res);
+    }
 }

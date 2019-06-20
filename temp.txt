@@ -1,8 +1,0 @@
-mvn clean package -Dmaven.test.skip=true
-
-
-
-git stash
-git pull
-git stash pop
-½â¾ö³åÍ»

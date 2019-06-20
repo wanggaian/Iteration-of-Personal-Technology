@@ -1,0 +1,21 @@
+本地打jar包 忽略测试
+mvn clean package -Dmaven.test.skip=true
+
+
+开发过程中临时处理其它bug场景
+git stash
+git pull
+git stash pop
+解决冲突
+
+
+落后很多版本提交可能出现的冲突场景
+git add 
+git commit -m ""
+git pull --rebase
+此时冲突
+代码解决
+git rebase --continue
+git commit --amend
+git push origin master
+

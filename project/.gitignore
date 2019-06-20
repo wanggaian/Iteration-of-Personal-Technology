@@ -1,0 +1,12 @@
+# idea ignore
+.idea/
+*.ipr
+*.iml
+*.iws
+out
+gen
+target
+logs
+.settings
+output
+

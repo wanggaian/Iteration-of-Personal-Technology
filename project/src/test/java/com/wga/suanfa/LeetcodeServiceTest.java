@@ -81,8 +81,21 @@ public class LeetcodeServiceTest {
      */
     @Test
     public void reverse() {
-        int num = -320;
+        int num = Integer.MAX_VALUE;
+        System.out.println("num:" + num);
+        int num1 = Integer.MAX_VALUE + 1;
+        System.out.println("num1:" + num1);
         int res = leetcodeService.reverse(num);
+        System.out.println(res);
+    }
+
+    /**
+     * leetcode8
+     */
+    @Test
+    public void myAtoi() {
+        String s = "";
+        int res = leetcodeService.myAtoi(s);
         System.out.println(res);
     }
 }

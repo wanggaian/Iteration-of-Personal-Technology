@@ -94,7 +94,7 @@ public class LeetcodeServiceTest {
      */
     @Test
     public void myAtoi() {
-        String s = "";
+        String s = "-91283472332";
         int res = leetcodeService.myAtoi(s);
         System.out.println(res);
     }

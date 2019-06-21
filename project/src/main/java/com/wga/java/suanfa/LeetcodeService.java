@@ -233,6 +233,37 @@ public class LeetcodeService {
      *              Thefore INT_MIN (−231) is returned.
      */
     public int myAtoi(String str) {
-        return 0;
+        if (str == null || str.isEmpty()) return 0;
+        int sign = 1, base = 0, i = 0;
+        str = str.trim();
+//        while (str.charAt(i) == ' ')
+//            i++;
+        if (str.charAt(i) == '-' || str.charAt(i) == '+')
+            sign = str.charAt(i++) == '-' ? -1 : 1;
+        while (i < str.length() && str.charAt(i) >= '0' && str.charAt(i) <= '9') {
+            if (base > Integer.MAX_VALUE / 10 || (base == Integer.MAX_VALUE / 10 && str.charAt(i) - '0' > 7)) {
+                return sign == -1 ? Integer.MIN_VALUE : Integer.MAX_VALUE;
+            }
+            base = base * 10 + (str.charAt(i++) - '0');
+        }
+        return sign * base;
+        // TODO: 2019/6/21  
+
+//        str = str.trim();
+//        char[] chars = str.toCharArray();
+//        char[] res = new char[chars.length];
+//        for (int i = 0; i < chars.length; i++) {
+//            if ((i == 0 && chars[i] == '-') || (chars[i] >= '0' && chars[i] <= '9')) {
+//                res[i] = chars[i];
+//            } else {
+//                break;
+//            }
+//        }
+//        String s = String.valueOf(res).trim();
+//        int value = 0;
+//        if (!"".equals(s)) {
+//            value = Integer.valueOf(s);
+//        }
+//        return value;
     }
 }

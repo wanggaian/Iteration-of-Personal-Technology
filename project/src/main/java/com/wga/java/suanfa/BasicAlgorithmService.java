@@ -69,7 +69,7 @@ public class BasicAlgorithmService {
      * 但是，由于固有的O(n^2)复杂度，选择排序在海量数据面前显得力不从心。
      * 因此，它适用于简单数据排序。
      */
-    public static void selectionSort(int[] arr) {
+    public static void selectSort(int[] arr) {
         int temp, min = 0;
         for (int i = 0; i < arr.length - 1; i++) {
             min = i;
@@ -165,4 +165,53 @@ public class BasicAlgorithmService {
     }
 
 
+    /**
+     *  5.quickSort
+     *  $O(N*logN)$
+     *  从数列中挑出一个元素，称为”基准”（pivot），
+     * 重新排序数列，所有比基准值小的元素摆放在基准前面，所有比基准值大的元素摆在基准后面
+     * （相同的数可以到任何一边）。在这个分区结束之后，该基准就处于数列的中间位置。
+     * 这个称为分区（partition）操作。
+     * 递归地（recursively）把小于基准值元素的子数列和大于基准值元素的子数列排序
+     *
+     * 稳定性
+     * 快速排序并不是稳定的。这是因为我们无法保证相等的数据按顺序被扫描到和按顺序存放。
+     *
+     * 适用场景
+     * 快速排序在大多数情况下都是适用的，尤其在数据量大的时候性能优越性更加明显。
+     * 但是在必要的时候，需要考虑下优化以提高其在最坏情况下的性能。
+     */
+    public static void quickSort(int[] arr) {
+        qSort(arr, 0, arr.length - 1);
+    }
+
+    private static void qSort(int[] arr, int low, int high) {
+        if (low >= high)
+            return;
+        // 获取基准位置
+        int index = partition(arr, low, high);
+        qSort(arr, low, index - 1);
+        qSort(arr, index + 1, high);
+    }
+
+    private static int partition(int[] arr, int low, int high) {
+        // 基准
+        int pivot = arr[low];
+        while (low < high) {
+            // 找到比基准小的index -> high
+            while (low < high && arr[high] >= pivot) --high;
+            // 将此值赋予low
+            arr[low] = arr[high];
+            // 找到比基准大的index -> low
+            while (low < high && arr[low] <= pivot) ++low;
+            // 将此值赋予high
+            arr[high] = arr[low];
+
+            // 至 low = high while不执行退出循环
+        }
+        // 基准值赋予arr数组内
+        arr[low] = pivot;
+        // 返回基准位置
+        return low;
+    }
 }

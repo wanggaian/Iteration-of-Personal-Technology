@@ -29,7 +29,7 @@ public class BasicAlgorithmServiceTest {
     @Test
     public void selectSortTest() {
         int[] arr = new int[]{1, 3, 9, 6, 2, -5, -9};
-        BasicAlgorithmService.selectionSort(arr);
+        BasicAlgorithmService.selectSort(arr);
         System.out.println(Arrays.toString(arr));
     }
 
@@ -50,6 +50,16 @@ public class BasicAlgorithmServiceTest {
     public void mergeSortTest() {
         int[] arr = new int[]{1, 3, 9, 6, 2, -5, -9};
         BasicAlgorithmService.mergeSort(arr);
+        System.out.println(Arrays.toString(arr));
+    }
+
+    /**
+     * 5 quick sort test
+     */
+    @Test
+    public void quickSortTest() {
+        int[] arr = new int[]{1, 3, 9, 6, 2, -5, -9};
+        BasicAlgorithmService.quickSort(arr);
         System.out.println(Arrays.toString(arr));
     }
 }
